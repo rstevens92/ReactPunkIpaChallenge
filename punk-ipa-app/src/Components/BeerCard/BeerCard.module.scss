@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+
+.beercard{
+    outline: 3px solid $primaryColor;
+    max-width: 200px;
+    max-height: 300px;
+    display: inline-block;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secondaryColor;
+    font-family: serif;
+    margin: $baseSpacingCard;
+    
+    .img {
+        max-width: 125px;
+        max-height: 125px;
+        outline: 3px double $tertiaryColor;
+        padding: $baseSpacingCard;
+        margin: $baseSpacingCard;
+    }
+
+    .header {
+        color: $tertiaryColor;
+        text-decoration: underline;
+        font-size: 20px;
+        margin: $baseSpacingCardText;
+        padding: $baseSpacingCardText;
+    }
+
+    .subheader {
+        color: $primaryColor;
+        font-size: 10px;
+        margin: $baseSpacingCardText;
+        padding: $baseSpacingCardText;
+    }
+    .description {
+        color: $primaryColor;
+        font-size: 8px;
+        margin: $baseSpacingCardText;
+        padding: $baseSpacingCardText;
+    }
+}
