@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './BeerCard.module.scss';
 
 const BeerCard = (props) => {
   const { image_url, name, abv, tagline, description } = props.beer;
-  // const [beers, getBeers] = useState([])
 
   return (
     <section className={styles.beercard}>
