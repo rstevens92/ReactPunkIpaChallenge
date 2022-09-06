@@ -2,17 +2,14 @@
 
 .beercard{
     outline: 3px solid $primaryColor;
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 400px;
     display: inline-block;
     text-align: center;
     background-color: $secondaryColor;
     font-family: $primaryfont;
     margin: $baseSpacingCard;
-    position: relative;
-    left: 21%;
     overflow-y: hidden;
-    overflow-x: hidden;
     
     .img {
         max-width: 125px;
@@ -33,13 +30,13 @@
 
     .subheader {
         color: $primaryColor;
-        font-size: 10px;
+        font-size: 15px;
         margin: $baseSpacingCardText;
         padding: $baseSpacingCardText;
     }
     .description {
         color: $primaryColor;
-        font-size: 8px;
+        font-size: 10px;
         margin: $baseSpacingCardText;
         padding: $baseSpacingCardText;
     }

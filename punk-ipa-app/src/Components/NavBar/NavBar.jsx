@@ -24,7 +24,7 @@ const NavBar = (props) => {
   return (
     <div className={styles.NavBar}>
       <h1 className={styles.header}>Brew Dog Beer Archive</h1>
-      <input type="text" name='Search' placeholder='Search' className={styles.searchbar} onChange={handleSearchInputChange} />
+      <input type="text" name='Search' placeholder='Search by name...' className={styles.searchbar} onChange={handleSearchInputChange} />
       <label htmlFor="HighABV">High Abv:</label>
       <input type="checkbox" name="HighABV" className={styles.checkbox} onChange={handleCheckboxChangeABV} />
       <label htmlFor="Classic">Classic Range:</label>

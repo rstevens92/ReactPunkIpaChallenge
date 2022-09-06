@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import styles from'./App.module.scss';
 import BeerCard from "./Components/BeerCard";
 import NavBar from './Components/NavBar';
 
@@ -25,16 +25,34 @@ function App() {
     getBeers();
   }, []);
 
+  // useEffect(() => {
+  //   if (APIbeers) {
+  //     if (searchText) {
+  //       setFilterBeers(APIbeers.filter((beer) => filterBeerName(beer, searchText)))
+  //     } else if(checkedHighABV) {
+  //       setFilterBeers(APIbeers.filter((beer) => highABV(beer)));
+  //     } else if(checkedVintage) {
+  //       setFilterBeers(APIbeers.filter((beer) => vintageBeer(beer)));
+  //     } else if(checkedPH) {
+  //       setFilterBeers(APIbeers.filter((beer) => acidicPH(beer)));
+  //     } else {
+  //       setFilterBeers(APIbeers);
+  //     }
+  //   } else {
+  //     console.log("API not called yet");
+  //   }
+  // }, [searchText, checkedHighABV, checkedVintage, checkedPH]);
+
   useEffect(() => {
     if (APIbeers) {
-      if (searchText) {
-        setFilterBeers(APIbeers.filter((beer) => filterBeerName(beer, searchText)))
-      } else if(checkedHighABV) {
-        setFilterBeers(APIbeers.filter((beer) => highABV(beer)));
-      } else if(checkedVintage) {
-        setFilterBeers(APIbeers.filter((beer) => vintagebeer(beer)));
-      } else if(checkedPH) {
-        setFilterBeers(APIbeers.filter((beer) => highPH(beer)));
+      if (searchText || checkedHighABV || checkedVintage || checkedPH) {
+        setFilterBeers(
+          APIbeers
+          .filter((beer) => checkedHighABV ? highABV(beer) : true)
+          .filter((beer) => checkedVintage ? vintageBeer(beer) : true)
+          .filter((beer) => checkedPH ? acidicPH(beer) : true)
+          .filter((beer) => searchText ? filterBeerName(beer, searchText) : true)
+        )
       } else {
         setFilterBeers(APIbeers);
       }
@@ -57,14 +75,14 @@ function App() {
     return false;
   }
 
-  const vintagebeer = (beer) => {
+  const vintageBeer = (beer) => {
     if(Number(beer.first_brewed.slice(-2)) < 10 ){
       return true;
     } 
     return false;
   }
 
-  const highPH = (beer) => {
+  const acidicPH = (beer) => {
    if(beer.ph < 4){
     return true;
    }
@@ -72,9 +90,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={styles.wholePage}>
       <NavBar setSearchText={setSearchText} filterHighABV={filterHighABV} filterVintage={filterVintage} filterPH={filterPH} />
+      <div className={styles.cardContainer}>
       {filterBeers.map(beer => <BeerCard beer={beer}/>)}
+      </div>
     </div>
   );
 }
