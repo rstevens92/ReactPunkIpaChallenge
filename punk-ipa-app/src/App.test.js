@@ -1,16 +1,8 @@
-// import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
-import { shallow } from 'enzyme';
-import { isValidElement } from 'react';
 
-describe("App tests", () =>{
-  let component;
-
-  beforeEach(() => {
-    component = isValidElement(<App />)
-  })
-
-  it("should render", () => {
-    expect(component).toBeTruthy();
-  })
-})
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
