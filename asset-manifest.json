@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//rstevens92.github.io/ReactPunkIpaChallenge/static/css/main.b25a435b.css",
+    "main.js": "//rstevens92.github.io/ReactPunkIpaChallenge/static/js/main.559b2811.js",
+    "static/js/787.cef5ade6.chunk.js": "//rstevens92.github.io/ReactPunkIpaChallenge/static/js/787.cef5ade6.chunk.js",
+    "index.html": "//rstevens92.github.io/ReactPunkIpaChallenge/index.html",
+    "main.b25a435b.css.map": "//rstevens92.github.io/ReactPunkIpaChallenge/static/css/main.b25a435b.css.map",
+    "main.559b2811.js.map": "//rstevens92.github.io/ReactPunkIpaChallenge/static/js/main.559b2811.js.map",
+    "787.cef5ade6.chunk.js.map": "//rstevens92.github.io/ReactPunkIpaChallenge/static/js/787.cef5ade6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b25a435b.css",
+    "static/js/main.559b2811.js"
+  ]
+}
