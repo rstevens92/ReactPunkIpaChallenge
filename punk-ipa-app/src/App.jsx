@@ -25,24 +25,6 @@ function App() {
     getBeers();
   }, []);
 
-  // useEffect(() => {
-  //   if (APIbeers) {
-  //     if (searchText) {
-  //       setFilterBeers(APIbeers.filter((beer) => filterBeerName(beer, searchText)))
-  //     } else if(checkedHighABV) {
-  //       setFilterBeers(APIbeers.filter((beer) => highABV(beer)));
-  //     } else if(checkedVintage) {
-  //       setFilterBeers(APIbeers.filter((beer) => vintageBeer(beer)));
-  //     } else if(checkedPH) {
-  //       setFilterBeers(APIbeers.filter((beer) => acidicPH(beer)));
-  //     } else {
-  //       setFilterBeers(APIbeers);
-  //     }
-  //   } else {
-  //     console.log("API not called yet");
-  //   }
-  // }, [searchText, checkedHighABV, checkedVintage, checkedPH]);
-
   useEffect(() => {
     if (APIbeers) {
       if (searchText || checkedHighABV || checkedVintage || checkedPH) {
